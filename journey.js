@@ -1,13 +1,13 @@
 const { randomize } = require("./utils.js")
 
-const createRivers = () => {
+const createRivers = () => {  // creatures random number of rivers between 1 and 3
     const rivers = Math.floor(Math.random() * 3) + 1
     return rivers
 }
 
 const createMountains = () => {
     const mountains = Math.floor(Math.random() * 2) + 1
-    return mauntains
+    return mountains
 }
 
 const createForests = () => {
@@ -24,13 +24,13 @@ const journeyMaker = () => {
     const journey = []
 
     const areas = {
-        rivers: createRiver(),
-        forests: createForest(),
-        mountains: createMountain(),
-        plains: createPlain()
+        rivers: createRivers(),
+        forests: createForests(),
+        mountains: createMountains(),
+        plains: createPlains()
     }
 
-    for (let riverNumber = 0; riverNumber < areas.rivers; riverNumber++) {
+    for (let riverNumber = 0; riverNumber < areas.rivers; riverNumber++) {  // let rivernumber=0 so we go through the whole array. while riverNumber is less than the amount of rivers created witht he createRivers() function inside the areas area. then add a 1 to riverNumbers so it only runs this code once through each river created. then we add the rivers to the journey array
         journey.push("river")
     }
 
@@ -51,5 +51,5 @@ const journeyMaker = () => {
 
 module.exports = {
     createRivers, createForests,
-    createMountains, createPlains
+    createMountains, createPlains, journeyMaker
 }
