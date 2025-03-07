@@ -25,8 +25,44 @@ Here are your learning objectives for this self-assessment.
 1. Able to use the debugger to step through existing code to discover root causes of bugs.
 2. Drawing a sequence diagram for a project.
    > Use the [sequencediagram.org](https://sequencediagram.org/) site to generate your sequence diagram. Make sure you save your work as you go.
+   
 3. Demonstrate learning efficiency by researching concepts you haven't seen before using your peers, mentors, and the World Wide Web as resources.
 4. Awareness of when you need help, and then seeking it out.
+
+title Bug Ranch
+
+participant data
+participant main.js
+
+
+
+
+participant functions
+
+data->main.js:import from cattle.js,
+drover.js, journey.js
+
+main.js->functions:set cattleToDrive to 50
+main.js->functions:invoke hireDrovers()
+
+loop loop through our database and created a new array with random drovers
+
+end
+main.js<-functions:return drovers array
+space
+main.js->functions:invoke roundup()
+loop loop through database and choose cow breeds randomly for cattle drive
+end
+main.js<-functions:return cattle array with all cattle breeds
+main.js->functions:invoke journeyMaker()
+
+loop journeyman loops through 4 functions to create the terrain for our trip
+end
+main.js<-functions:return journey array with the rivers, plains, mountains, and forests we will go through
+box over main.js:print all the data we have processed onto the screen. for the amount of drovers and their names, the breeds of the cattle, and the types of terrain we will encounter on our trip
+
+
+
 
 ## Example Output
 
